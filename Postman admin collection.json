@@ -1,0 +1,185 @@
+{
+  "info": {
+    "_postman_id": "12345-67890-abcdef",
+    "name": "Admin API Tests",
+    "description": "Collection for testing admin endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/admin/register",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{server_ip}}/admin/register",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "register" ]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "{{username}}"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}"
+            },
+            {
+              "key": "admin_key",
+              "value": "{{admin_key}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "/admin/token",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{server_ip}}/admin/token",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "token" ]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "{{username}}"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}"
+            },
+            {
+              "key": "admin_key",
+              "value": "{{admin_key}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "/admin/queue/remove_first",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{server_ip}}/admin/queue/remove_first",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "queue", "remove_first" ]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "admin_key",
+              "value": "{{admin_key}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "/admin/queue/user/{queue_id}",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{server_ip}}/admin/queue/user/{{queue_id}}",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "queue", "user", "{{queue_id}}" ]
+        },
+        "headers": [
+          {
+            "key": "admin_key",
+            "value": "{{admin_key}}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/admin/queue/remove",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{server_ip}}/admin/queue/remove",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "queue", "remove" ]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "admin_key",
+              "value": "{{admin_key}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "/admin/queue/clear",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{server_ip}}/admin/queue/clear",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "queue", "clear" ]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "admin_key",
+              "value": "{{admin_key}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "/admin/delete",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{server_ip}}/admin/delete",
+          "host": [ "{{server_ip}}" ],
+          "path": [ "admin", "delete" ]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "{{username}}"
+            },
+            {
+              "key": "admin_key",
+              "value": "{{admin_key}}"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "username",
+      "value": "admin_user"
+    },
+    {
+      "key": "password",
+      "value": "admin_password"
+    },
+    {
+      "key": "server_ip",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "admin_key",
+      "value": "admin_key_value"
+    }
+  ]
+}
